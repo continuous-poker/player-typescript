@@ -1,12 +1,12 @@
 import express, { Express, Request, Response } from 'express';
 import {decide} from "./logic/strategy";
 import {Bet, Table} from "./models";
-import bodyParser from "body-parser";
 
 const app: Express = express();
 const port = 8000;
 
-app.use(bodyParser.json())
+app.use(express.json());
+
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Poker Typescript Player');
